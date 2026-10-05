@@ -6,12 +6,19 @@ const MIN_FILL_MS = 2000;
 
 // No hay backend: el envío se simula. Aquí iría la llamada real a la API.
 const defaultTransport = () => new Promise((resolve) => setTimeout(resolve, 1200));
+const getLocalStorage = () => {
+  try {
+    return globalThis.localStorage;
+  } catch {
+    return null;
+  }
+};
 
 // Pipeline de seguridad: honeypot -> tiempo mínimo -> límite de envíos -> validación -> envío.
 export async function submitContact(raw, {
   honeypot = '',
   startedAt = Date.now(),
-  storage = globalThis.localStorage,
+  storage = getLocalStorage(),
   now = Date.now,
   transport = defaultTransport,
   log = logSecurityEvent,

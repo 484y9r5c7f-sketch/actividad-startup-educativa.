@@ -21,7 +21,8 @@ src/
 | `npm run build` | Compilación de producción |
 | `npm run preview` | Sirve el build con CSP completa |
 | `npm run lint` | ESLint |
-| `npm test` | Pruebas de seguridad (14, con `node --test`) |
+| `npm test` | Ejecuta las pruebas automatizadas (`node --test`) |
+| `npm run coverage` | Pruebas con reporte LCOV en `coverage/lcov.info` para Sonar |
 
 ## Seguridad
 
@@ -60,7 +61,7 @@ Página interactiva para demostrar las protecciones. Todo corre en el navegador 
 Honeypot, tiempo mínimo de 2 s, máximo 3 envíos/minuto, validación por campo y sanitización. El envío es simulado (no hay backend).
 
 ## Pruebas
-`npm test` ejecuta 23 pruebas (sanitizador, validadores, límite, bitácora, controladores). Además: `npm run lint` y `npm run build`.
+`npm test` ejecuta las pruebas automatizadas (sanitizador, validadores, límite, bitácora, controladores). Para generar cobertura LCOV, ejecuta `npm run coverage`. Además: `npm run lint` y `npm run build`.
 
 ## Guía para el informe
 1. **Estático:** analizar en SonarCloud antes/después y capturar el dashboard (seguridad, fiabilidad, mantenibilidad, duplicación).

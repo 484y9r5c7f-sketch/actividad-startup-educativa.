@@ -65,3 +65,17 @@ test('el limitador bloquea tras el máximo y se libera con el tiempo', () => {
   t += 61_000;
   assert.equal(limiter.attempt().allowed, true);
 });
+
+test('el limitador conserva el límite en memoria si el almacenamiento no está disponible', () => {
+  const key = `unavailable-storage-${Date.now()}-${Math.random()}`;
+  const storage = {
+    getItem() { throw new Error('storage unavailable'); },
+    setItem() { throw new Error('storage unavailable'); },
+  };
+  const options = { key, storage, max: 2, now: () => 1_000_000 };
+  const limiter = createRateLimiter(options);
+
+  assert.equal(limiter.attempt().allowed, true);
+  assert.equal(limiter.attempt().allowed, true);
+  assert.equal(createRateLimiter(options).attempt().allowed, false);
+});
