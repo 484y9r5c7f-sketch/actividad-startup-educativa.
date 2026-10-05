@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-10-05T20:24:58.843Z",
+  "scope": "Pruebas locales de funciones; detectar un patrón no demuestra explotación.",
+  "results": [
+    {
+      "case": "XSS directo",
+      "detected": [
+        "XSS"
+      ],
+      "acceptedByValidator": false,
+      "sanitized": "alert(1)"
+    },
+    {
+      "case": "SQLi directo",
+      "detected": [
+        "SQLi"
+      ],
+      "acceptedByValidator": false,
+      "sanitized": "' OR '1'='1"
+    },
+    {
+      "case": "Traversal directo",
+      "detected": [
+        "Path traversal"
+      ],
+      "acceptedByValidator": false,
+      "sanitized": "../../etc/passwd"
+    },
+    {
+      "case": "Plantilla directa",
+      "detected": [
+        "Inyección de plantillas"
+      ],
+      "acceptedByValidator": false,
+      "sanitized": "${7*7}"
+    },
+    {
+      "case": "XSS con caracteres de ancho completo",
+      "detected": [],
+      "acceptedByValidator": false,
+      "sanitized": "alert(1)"
+    },
+    {
+      "case": "Traversal codificado",
+      "detected": [],
+      "acceptedByValidator": true,
+      "sanitized": "%2e%2e%2fetc%2fpasswd"
+    },
+    {
+      "case": "Texto legítimo sobre programación",
+      "detected": [
+        "XSS"
+      ],
+      "acceptedByValidator": false,
+      "sanitized": "Quiero aprender a usar onload= en JavaScript."
+    },
+    {
+      "case": "Mensaje mayor que máximo",
+      "accepted": true,
+      "resultingLength": 1000
+    },
+    {
+      "case": "Cuatro intentos seguidos",
+      "allowed": [
+        true,
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "case": "Borrar almacenamiento reinicia límite",
+      "allowed": true
+    },
+    {
+      "case": "Almacenamiento inaccesible",
+      "allowed": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "case": "Ataque rechazado antes del transporte",
+      "code": "invalid",
+      "transportCalled": false
+    },
+    {
+      "case": "Límite de bitácora",
+      "count": 50
+    }
+  ]
+}

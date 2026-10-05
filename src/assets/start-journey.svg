@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Cohete principal -->
+    <path d="M200 50C200 50 150 100 150 200C150 250 200 280 200 280C200 280 250 250 250 200C250 100 200 50 200 50Z" fill="#4F46E5"/>
+    <path d="M200 100C200 100 170 130 170 200C170 230 200 250 200 250C200 250 230 230 230 200C230 130 200 100 200 100Z" fill="white"/>
+    
+    <!-- Ventana del cohete -->
+    <circle cx="200" cy="160" r="15" fill="#4F46E5"/>
+    <circle cx="200" cy="160" r="10" fill="white"/>
+    
+    <!-- Fuego del cohete -->
+    <path d="M185 280C185 280 200 300 215 280C215 280 200 290 185 280Z" fill="#FF4545"/>
+    <path d="M190 285C190 285 200 300 210 285C210 285 200 292 190 285Z" fill="#FFA726"/>
+    
+    <!-- Estrellas y detalles -->
+    <circle cx="150" cy="100" r="4" fill="#4F46E5"/>
+    <circle cx="250" cy="120" r="4" fill="#4F46E5"/>
+    <circle cx="180" cy="80" r="4" fill="#4F46E5"/>
+    <circle cx="220" cy="90" r="4" fill="#4F46E5"/>
+    
+    <!-- Rastro del cohete -->
+    <path d="M170 250C170 250 140 220 160 180" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4 4"/>
+    <path d="M230 250C230 250 260 220 240 180" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4 4"/>
+    
+    <!-- Texto indicador -->
+    <path d="M320 80L325 85L330 80L325 75L320 80Z" fill="#4F46E5"/>
+    <path d="M80 220L85 225L90 220L85 215L80 220Z" fill="#4F46E5"/>
+    
+    <!-- Badges flotantes -->
+    <circle cx="100" cy="150" r="20" fill="#22C55E" opacity="0.2"/>
+    <circle cx="300" cy="150" r="20" fill="#3B82F6" opacity="0.2"/>
+    <circle cx="200" cy="50" r="20" fill="#F59E0B" opacity="0.2"/>
+</svg>

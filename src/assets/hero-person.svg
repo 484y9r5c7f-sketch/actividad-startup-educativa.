@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Person silhouette -->
+    <path d="M200 80C226.51 80 248 58.51 248 32C248 5.49 226.51 -16 200 -16C173.49 -16 152 5.49 152 32C152 58.51 173.49 80 200 80Z" fill="#4F46E5"/>
+    <path d="M280 320V280C280 246.863 253.137 220 220 220H180C146.863 220 120 246.863 120 280V320" stroke="#4F46E5" stroke-width="16"/>
+    
+    <!-- Play button badge -->
+    <circle cx="300" cy="120" r="40" fill="#22C55E"/>
+    <path d="M290 105L315 120L290 135V105Z" fill="white"/>
+    
+    <!-- Chat badge -->
+    <circle cx="100" cy="150" r="35" fill="#3B82F6"/>
+    <path d="M85 150C85 142.268 91.2685 136 99 136H101C108.732 136 115 142.268 115 150V152C115 159.732 108.732 166 101 166H93L85 174V150Z" fill="white"/>
+    
+    <!-- Check badge -->
+    <circle cx="320" cy="250" r="30" fill="#F59E0B"/>
+    <path d="M310 250L318 258L330 246" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

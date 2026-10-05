@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nosotros — Edumotion</title>
+  <style>
+    :root{--bg:#f8fafc;--card:#fff;--muted:#6b7280;--accent:#0f172a;--radius:10px}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;background:var(--bg);color:var(--accent);-webkit-font-smoothing:antialiased}
+    header.hero{padding:48px 20px;text-align:center;background:linear-gradient(180deg,#ffffff,#f1f5f9)}
+    header.hero h1{margin:0;font-size:2rem}
+    header.hero p{color:var(--muted);max-width:820px;margin:8px auto 0}
+    .container{max-width:1100px;margin:24px auto;padding:0 20px}
+    .grid{display:flex;gap:16px;flex-wrap:wrap}
+    .card{background:var(--card);padding:16px;border-radius:var(--radius);box-shadow:0 8px 24px rgba(15,23,42,0.06)}
+    .who{flex:1 1 320px}
+    .courses{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .course-pill{padding:8px 12px;background:var(--card);border-radius:6px;text-decoration:none;color:var(--accent);box-shadow:0 6px 18px rgba(15,23,42,0.04)}
+    .team{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .member{flex:1 1 220px}
+    .member img{width:100%;height:160px;object-fit:cover;border-radius:6px}
+    .cta{display:inline-block;padding:10px 14px;background:#0b6fff;color:#fff;border-radius:8px;text-decoration:none}
+    .values ul{margin:8px 0;padding-left:20px;color:#374151}
+    .contact-methods{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+    .faq{margin-top:12px}
+    .faq-item{margin-bottom:8px}
+    .faq-btn{width:100%;text-align:left;padding:12px;border-radius:8px;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid #eef2f7;cursor:pointer}
+    .faq-panel{padding:10px 12px;background:#fff;margin-top:6px;border-radius:8px;display:none;color:#334155}
+    footer{padding:24px 20px;text-align:center;color:var(--muted);margin-top:28px}
+    form.contact-form{display:flex;flex-direction:column;gap:8px}
+    input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef6}
+    button.submit{padding:10px 14px;background:#06b6d4;color:#04263a;border-radius:8px;border:0;cursor:pointer}
+    @media(min-width:900px){header.hero h1{font-size:2.5rem}}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <h1>Nosotros</h1>
+    <p>
+      En Edumotion impulsamos el talento con formación práctica y acompañamiento personalizado.
+      Conecta con proyectos reales y tutores expertos para acelerar tu inserción profesional.
+    </p>
+    <div style="margin-top:16px">
+      <a href="/index.html" class="cta" style="margin-right:8px">Volver al sitio</a>
+      <a href="#contacto" class="cta" style="background:#0f172a">Contactar</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="grid" aria-labelledby="about-heading">
+      <div class="card who">
+        <h2 id="about-heading">Quiénes somos</h2>
+        <p style="color:var(--muted)">Somos un equipo de educadores y profesionales de la industria dedicados a crear experiencias de aprendizaje que conecten con el mercado laboral.</p>
+      </div>
+
+      <div class="card">
+        <h3>Misión</h3>
+        <p style="color:var(--muted)">Capacitar a personas en habilidades digitales relevantes mediante formación práctica, mentoría y proyectos aplicados que aceleren su inserción profesional.</p>
+      </div>
+
+      <div class="card">
+        <h3>Visión</h3>
+        <p style="color:var(--muted)">Ser una referencia regional en educación tecnológica y profesional, impulsando cambios reales en la trayectoria de nuestros estudiantes.</p>
+      </div>
+    </section>
+
+    <section style="margin-top:20px">
+      <h3>Cursos destacados</h3>
+      <div class="courses">
+        <a class="course-pill" href="/#cursos">Desarrollo Web</a>
+        <a class="course-pill" href="/#cursos">Data Science</a>
+        <a class="course-pill" href="/#cursos">Marketing Digital</a>
+        <a class="course-pill" href="/#cursos">Inglés Profesional</a>
+      </div>
+    </section>
+
+    <section style="margin-top:20px">
+      <h3>Equipo</h3>
+      <div class="team">
+        <div class="card member">
+          <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=900&q=80&auto=format&fit=crop" alt="Ana Castillo">
+          <h4 style="margin:8px 0 4px">Ana Castillo</h4>
+          <p style="margin:0;color:var(--muted)">Tutora Desarrollo Web — Ingeniera de software con experiencia en apps y enseñanza de React.</p>
+        </div>
+        <div class="card member">
+          <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=900&q=80&auto=format&fit=crop" alt="Marcos Peña">
+          <h4 style="margin:8px 0 4px">Marcos Peña</h4>
+          <p style="margin:0;color:var(--muted)">Tutor Data Science — Experto en pipelines y modelos en producción.</p>
+        </div>
+        <div class="card member">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=900&q=80&auto=format&fit=crop" alt="Carolina Ríos">
+          <h4 style="margin:8px 0 4px">Carolina Ríos</h4>
+          <p style="margin:0;color:var(--muted)">Tutora Marketing Digital — Especialista en growth y analítica.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top:20px" class="card">
+      <h3>Métodos de contacto</h3>
+      <div class="contact-methods">
+        <div>
+          <strong>Correo</strong>
+          <p style="margin:6px 0"><a href="mailto:hola@edumotion.com">hola@edumotion.com</a></p>
+          <small style="color:var(--muted)">Respuesta en 24-48 horas</small>
+        </div>
+
+        <div>
+          <strong>Teléfono</strong>
+          <p style="margin:6px 0"><a href="tel:+1234567890">+1 (234) 567-890</a></p>
+          <small style="color:var(--muted)">Lun - Vie, 9:00 - 18:00</small>
+        </div>
+
+        <div>
+          <strong>Dirección</strong>
+          <p style="margin:6px 0">Av. Educación 123, Oficina 45</p>
+          <small style="color:var(--muted)">Atención con cita previa</small>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" style="margin-top:20px" class="card">
+      <h3>Contáctanos</h3>
+      <p style="color:var(--muted);margin-top:6px">Envía un mensaje rápido o agenda una llamada. También puedes escribirnos directamente por correo.</p>
+
+      <form class="contact-form" onsubmit="sendMail(event)">
+        <input type="text" id="name" placeholder="Tu nombre completo" required />
+        <input type="email" id="email" placeholder="tu@ejemplo.com" required />
+        <textarea id="message" rows="5" placeholder="Cuéntanos qué te interesa aprender" required></textarea>
+        <button type="submit" class="submit">Enviar mensaje</button>
+        <p id="form-note" style="color:var(--muted);font-size:0.9rem;margin:6px 0 0">También puedes enviar un email directo a hola@edumotion.com</p>
+      </form>
+    </section>
+
+    <section style="margin-top:20px" class="card faq" id="faq">
+      <h3>Preguntas frecuentes</h3>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">¿Cómo inscribirme a un curso?</button>
+        <div class="faq-panel">Selecciona el curso en la sección "Cursos" de la web y sigue el proceso de inscripción. Si tienes dudas, escríbenos en el formulario.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">¿Qué modalidades ofrecen?</button>
+        <div class="faq-panel">Lecciones pregrabadas, sesiones en vivo semanales, material descargable y proyecto final con mentoría.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">¿Recibo certificado?</button>
+        <div class="faq-panel">Sí, al completar el curso y el proyecto final recibirás un certificado digital de finalización.</div>
+      </div>
+    </section>
+
+    <section style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between">
+      <div class="card" style="flex:1 1 420px">
+        <h3>Valores</h3>
+        <ul>
+          <li>Enfoque práctico</li>
+          <li>Aprendizaje con propósito</li>
+          <li>Acompañamiento personalizado</li>
+        </ul>
+      </div>
+
+      <div class="card" style="flex:0 0 320px">
+        <h4 style="margin-top:0">¿Quieres orientación personalizada?</h4>
+        <p style="color:var(--muted)">Agenda una asesoría gratuita y te ayudamos a elegir el mejor curso según tu perfil.</p>
+        <a class="cta" href="#contacto">Solicitar asesoría</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © Edumotion — <a href="/privacy.html" style="color:var(--muted)">Política de privacidad</a>
+  </footer>
+
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        document.querySelectorAll('.faq-btn').forEach(b=>b.setAttribute('aria-expanded','false'));
+        document.querySelectorAll('.faq-panel').forEach(p=>p.style.display='none');
+        if(!expanded){
+          btn.setAttribute('aria-expanded','true');
+          btn.nextElementSibling.style.display='block';
+        }
+      });
+    });
+
+    // smooth hash scroll for same-page links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        e.preventDefault();
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+      });
+    });
+
+    // simple mailto submit
+    function sendMail(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name || !email || !message) return alert('Por favor completa todos los campos.');
+      const subject = encodeURIComponent('Contacto desde sitio — ' + name);
+      const body = encodeURIComponent('Nombre: ' + name + '\nEmail: ' + email + '\n\n' + message);
+      window.location.href = 'mailto:hola@edumotion.com?subject=' + subject + '&body=' + body;
+    }
+  </script>
+</body>
+</html>

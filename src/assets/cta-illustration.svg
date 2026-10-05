@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Fondo abstracto -->
+    <path d="M0 150C0 67.1573 67.1573 0 150 0H250C332.843 0 400 67.1573 400 150V300H0V150Z" fill="#F5F3FF"/>
+    
+    <!-- Elementos decorativos -->
+    <circle cx="50" cy="100" r="20" fill="#4F46E5" opacity="0.1"/>
+    <circle cx="350" cy="200" r="30" fill="#4F46E5" opacity="0.1"/>
+    <circle cx="200" cy="50" r="15" fill="#4F46E5" opacity="0.1"/>
+    
+    <!-- Laptop/Device -->
+    <rect x="150" y="100" width="160" height="100" rx="8" fill="#4F46E5"/>
+    <rect x="160" y="110" width="140" height="70" fill="white"/>
+    
+    <!-- Elementos de la pantalla -->
+    <rect x="170" y="120" width="60" height="8" rx="4" fill="#4F46E5" opacity="0.3"/>
+    <rect x="170" y="135" width="100" height="8" rx="4" fill="#4F46E5" opacity="0.2"/>
+    <rect x="170" y="150" width="80" height="8" rx="4" fill="#4F46E5" opacity="0.1"/>
+    
+    <!-- Estrellas/Brillos -->
+    <path d="M320 80L325 85L330 80L325 75L320 80Z" fill="#4F46E5"/>
+    <path d="M80 220L85 225L90 220L85 215L80 220Z" fill="#4F46E5"/>
+    <path d="M280 250L285 255L290 250L285 245L280 250Z" fill="#4F46E5"/>
+</svg>

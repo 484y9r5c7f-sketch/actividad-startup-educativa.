@@ -1,0 +1,44 @@
+{
+  "Vary": [
+    "Origin"
+  ],
+  "Cache-Control": [
+    "no-cache"
+  ],
+  "ETag": [
+    "W/\"3ec-DPwssfPeHo+arHx/pY3hx0RF1VI\""
+  ],
+  "X-Content-Type-Options": [
+    "nosniff"
+  ],
+  "X-Frame-Options": [
+    "DENY"
+  ],
+  "Referrer-Policy": [
+    "strict-origin-when-cross-origin"
+  ],
+  "Permissions-Policy": [
+    "camera=(), microphone=(), geolocation=()"
+  ],
+  "Cross-Origin-Opener-Policy": [
+    "same-origin"
+  ],
+  "Content-Security-Policy": [
+    "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+  ],
+  "Date": [
+    "Mon, 05 Oct 2026 20:25:21 GMT"
+  ],
+  "Connection": [
+    "keep-alive"
+  ],
+  "Keep-Alive": [
+    "timeout=5"
+  ],
+  "Transfer-Encoding": [
+    "chunked"
+  ],
+  "Content-Type": [
+    "text/html"
+  ]
+}

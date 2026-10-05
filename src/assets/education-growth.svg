@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Graduación/Libro abierto central -->
+    <path d="M200 50L300 100L200 150L100 100L200 50Z" fill="#4F46E5"/>
+    <path d="M100 100V200L200 250V150L100 100Z" fill="#4338CA"/>
+    <path d="M300 100V200L200 250V150L300 100Z" fill="#3730A3"/>
+    
+    <!-- Borlas del birrete -->
+    <path d="M190 40C190 40 200 30 210 40C210 40 205 45 200 45C195 45 190 40 190 40Z" fill="#F59E0B"/>
+    
+    <!-- Elementos flotantes de aprendizaje -->
+    <!-- Laptop -->
+    <rect x="80" y="120" width="60" height="40" rx="5" fill="#22C55E"/>
+    <rect x="85" y="125" width="50" height="30" fill="white"/>
+    
+    <!-- Libro -->
+    <path d="M260 120H320V160H260V120Z" fill="#3B82F6"/>
+    <path d="M290 120V160" stroke="white" stroke-width="2"/>
+    
+    <!-- Símbolos de código/fórmulas -->
+    <text x="90" y="145" fill="white" font-family="monospace" font-size="8">&lt;/&gt;</text>
+    <text x="270" y="145" fill="white" font-family="monospace" font-size="8">f(x)</text>
+    
+    <!-- Destellos de conocimiento -->
+    <circle cx="150" cy="80" r="3" fill="#F59E0B"/>
+    <circle cx="250" cy="80" r="3" fill="#F59E0B"/>
+    <circle cx="120" cy="180" r="3" fill="#F59E0B"/>
+    <circle cx="280" cy="180" r="3" fill="#F59E0B"/>
+    
+    <!-- Camino del progreso -->
+    <path d="M50 250C100 230 300 230 350 250" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4 4"/>
+    
+    <!-- Estrellas de logro -->
+    <path d="M320 70L325 75L330 70L325 65L320 70Z" fill="#22C55E"/>
+    <path d="M70 220L75 225L80 220L75 215L70 220Z" fill="#22C55E"/>
+    <path d="M200 270L205 275L210 270L205 265L200 270Z" fill="#22C55E"/>
+</svg>
