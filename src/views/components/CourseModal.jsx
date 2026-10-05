@@ -26,9 +26,6 @@ const CourseModal = ({ course, onClose }) => {
         background: 'rgba(0,0,0,0.7)', display: 'flex', alignItems: 'center',
         justifyContent: 'center', zIndex: 1000, padding: 20,
       }}
-      onClick={(event) => {
-        if (event.target === event.currentTarget) onClose();
-      }}
       onCancel={(event) => {
         event.preventDefault();
         onClose();
