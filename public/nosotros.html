@@ -28,6 +28,7 @@
     .faq-panel{padding:10px 12px;background:#fff;margin-top:6px;border-radius:8px;display:none;color:#334155}
     footer{padding:24px 20px;text-align:center;color:var(--muted);margin-top:28px}
     form.contact-form{display:flex;flex-direction:column;gap:8px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef6}
     button.submit{padding:10px 14px;background:#06b6d4;color:#04263a;border-radius:8px;border:0;cursor:pointer}
     @media(min-width:900px){header.hero h1{font-size:2.5rem}}
@@ -123,8 +124,11 @@
       <p style="color:var(--muted);margin-top:6px">Envía un mensaje rápido o agenda una llamada. También puedes escribirnos directamente por correo.</p>
 
       <form class="contact-form" onsubmit="sendMail(event)">
+        <label class="sr-only" for="name">Nombre</label>
         <input type="text" id="name" placeholder="Tu nombre completo" required />
+        <label class="sr-only" for="email">Correo electrónico</label>
         <input type="email" id="email" placeholder="tu@ejemplo.com" required />
+        <label class="sr-only" for="message">Mensaje</label>
         <textarea id="message" rows="5" placeholder="Cuéntanos qué te interesa aprender" required></textarea>
         <button type="submit" class="submit">Enviar mensaje</button>
         <p id="form-note" style="color:var(--muted);font-size:0.9rem;margin:6px 0 0">También puedes enviar un email directo a hola@edumotion.com</p>

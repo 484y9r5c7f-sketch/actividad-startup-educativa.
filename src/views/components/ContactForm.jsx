@@ -16,12 +16,11 @@ const mensajesInspiracionales = [
 const ContactForm = () => {
   const { values, errors, isSubmitting, handleChange, handleSubmit } = useContactForm();
   const [floatOffset, setFloatOffset] = useState(0);
-  const [mensajeInicial, setMensajeInicial] = useState('');
+  const [mensajeInicial] = useState(
+    () => mensajesInspiracionales[new Date().getDate() % mensajesInspiracionales.length],
+  );
 
   useEffect(() => {
-    // Mensaje aleatorio una sola vez al montar
-    setMensajeInicial(mensajesInspiracionales[Math.floor(Math.random() * mensajesInspiracionales.length)]);
-
     // Anima sutilmente la imagen de contacto
     let dir = 1;
     const id = setInterval(() => {

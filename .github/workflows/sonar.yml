@@ -1,0 +1,41 @@
+name: SonarQube Cloud
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    env:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run coverage
+      - run: npm run build
+
+      - name: Analyze with SonarQube Cloud
+        if: ${{ vars.SONAR_ORGANIZATION != '' && vars.SONAR_PROJECT_KEY != '' && env.SONAR_TOKEN != '' }}
+        uses: SonarSource/sonarqube-scan-action@v5
+        with:
+          args: >
+            -Dsonar.organization=${{ vars.SONAR_ORGANIZATION }}
+            -Dsonar.projectKey=${{ vars.SONAR_PROJECT_KEY }}
+
+      - name: Explain skipped Sonar analysis
+        if: ${{ vars.SONAR_ORGANIZATION == '' || vars.SONAR_PROJECT_KEY == '' || env.SONAR_TOKEN == '' }}
+        run: echo "Configure SONAR_ORGANIZATION, SONAR_PROJECT_KEY and SONAR_TOKEN in repository settings to publish the analysis and coverage."

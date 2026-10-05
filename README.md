@@ -63,6 +63,11 @@ Honeypot, tiempo mínimo de 2 s, máximo 3 envíos/minuto, validación por campo
 ## Pruebas
 `npm test` ejecuta las pruebas automatizadas (sanitizador, validadores, límite, bitácora, controladores). Para generar cobertura LCOV, ejecuta `npm run coverage`. Además: `npm run lint` y `npm run build`.
 
+El workflow de SonarQube Cloud ejecuta lint, pruebas, cobertura y build en cada push a `main` y en cada pull request. Para publicar el análisis y la cobertura, configura en GitHub, en **Settings → Secrets and variables → Actions**:
+- La variable `SONAR_ORGANIZATION` con la clave de organización de SonarQube Cloud.
+- La variable `SONAR_PROJECT_KEY` con la clave del proyecto.
+- El secreto `SONAR_TOKEN` con un token de análisis de SonarQube Cloud.
+
 ## Guía para el informe
 1. **Estático:** analizar en SonarCloud antes/después y capturar el dashboard (seguridad, fiabilidad, mantenibilidad, duplicación).
 2. **Dinámico:** `npm run build; npm run preview` y escanear `http://localhost:4173` con OWASP ZAP (la CSP completa solo aplica en build/preview).

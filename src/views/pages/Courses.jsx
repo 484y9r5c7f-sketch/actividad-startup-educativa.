@@ -144,7 +144,6 @@ const Courses = () => {
 					{visibleCourses.map((c) => (
 						<article
 							key={c.id}
-							onClick={() => setSelectedCourse(c)}
 							style={{
 								flex: '1 1 280px',
 								maxWidth: '360px',
@@ -152,39 +151,44 @@ const Courses = () => {
 								borderRadius: 8,
 								boxShadow: '0 6px 18px rgba(15,23,42,0.06)',
 								background: '#fff',
-								cursor: 'pointer',
 								overflow: 'hidden',
 								display: 'flex',
 								flexDirection: 'column',
 							}}
-							role="button"
-							tabIndex={0}
-							onKeyDown={(e) => {
-								if (e.key === 'Enter') setSelectedCourse(c);
-							}}
-							aria-label={`Abrir curso ${c.title}`}
 						>
-							<img
-								src={c.image}
-								alt={c.title}
-								style={{ width: '100%', height: 160, objectFit: 'cover' }}
-							/>
-							<div style={{ padding: '1rem' }}>
-								<h3 style={{ margin: '0 0 6px 0' }}>{c.title}</h3>
-								<p style={{ color: '#6b7280', margin: 0 }}>{c.description}</p>
-								<div
-									style={{
-										display: 'flex',
-										justifyContent: 'space-between',
-										marginTop: 10,
-										alignItems: 'center',
-									}}
-								>
-									<span style={{ fontWeight: 700 }}>{formatCOP(c.priceCOP)}</span>
-									<span style={{ color: '#6b7280' }}>{c.duration}</span>
-								</div>
-								<p style={{ fontWeight: 600, marginTop: '0.75rem' }}>Ver plan →</p>
-							</div>
+							<button
+								type="button"
+								onClick={() => setSelectedCourse(c)}
+								aria-label={`Ver plan del curso ${c.title}`}
+								style={{
+									display: 'flex',
+									flexDirection: 'column',
+									width: '100%',
+									height: '100%',
+									padding: 0,
+									border: 0,
+									background: 'transparent',
+									color: 'inherit',
+									font: 'inherit',
+									textAlign: 'left',
+									cursor: 'pointer',
+								}}
+							>
+								<img
+									src={c.image}
+									alt=""
+									style={{ width: '100%', height: 160, objectFit: 'cover' }}
+								/>
+								<span style={{ display: 'block', padding: '1rem' }}>
+									<span role="heading" aria-level="3" style={{ display: 'block', margin: '0 0 6px 0', fontSize: '1.17em', fontWeight: 700 }}>{c.title}</span>
+									<span style={{ display: 'block', color: '#6b7280', margin: 0 }}>{c.description}</span>
+									<span style={{ display: 'flex', justifyContent: 'space-between', marginTop: 10, alignItems: 'center' }}>
+										<span style={{ fontWeight: 700 }}>{formatCOP(c.priceCOP)}</span>
+										<span style={{ color: '#6b7280' }}>{c.duration}</span>
+									</span>
+									<span style={{ display: 'block', fontWeight: 600, marginTop: '0.75rem' }}>Ver plan →</span>
+								</span>
+							</button>
 						</article>
 					))}
 				</div>

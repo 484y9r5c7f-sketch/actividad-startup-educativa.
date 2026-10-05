@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { detectThreats, sanitizeText, sanitizeQuery } from './sanitizer.js';
 import { validateContact } from './validators.js';
 import { createRateLimiter } from './rateLimiter.js';
+import { logSecurityEvent } from './securityLog.js';
 
 const memoryStorage = () => {
   const data = new Map();
@@ -22,10 +23,12 @@ test('detecta XSS, SQLi, traversal y plantillas', () => {
 test('no marca texto legítimo como amenaza', () => {
   assert.deepEqual(detectThreats('Hola, quiero información sobre el curso de Data Science.'), []);
   assert.deepEqual(detectThreats("María O'Brien-Pérez"), []);
+  assert.deepEqual(detectThreats('Usa < script>solo como texto'), []);
 });
 
 test('sanitizeText elimina etiquetas, control y espacios invisibles y limita longitud', () => {
   assert.equal(sanitizeText('Hola <b>mundo</b>'), 'Hola mundo');
+  assert.equal(sanitizeText('Texto <etiqueta'), 'Texto');
   assert.equal(sanitizeText('a\u0000b\u200Bc'), 'abc');
   assert.equal(sanitizeText('x'.repeat(50), { maxLength: 10 }).length, 10);
   assert.equal(sanitizeText(null), '');
@@ -67,7 +70,7 @@ test('el limitador bloquea tras el máximo y se libera con el tiempo', () => {
 });
 
 test('el limitador conserva el límite en memoria si el almacenamiento no está disponible', () => {
-  const key = `unavailable-storage-${Date.now()}-${Math.random()}`;
+  const key = `unavailable-storage-${Date.now()}`;
   const storage = {
     getItem() { throw new Error('storage unavailable'); },
     setItem() { throw new Error('storage unavailable'); },
@@ -78,4 +81,16 @@ test('el limitador conserva el límite en memoria si el almacenamiento no está 
   assert.equal(limiter.attempt().allowed, true);
   assert.equal(limiter.attempt().allowed, true);
   assert.equal(createRateLimiter(options).attempt().allowed, false);
+});
+
+test('los eventos de bitácora tienen identificadores únicos', () => {
+  const events = new Map();
+  const storage = {
+    getItem: (key) => events.get(key) ?? null,
+    setItem: (key, value) => events.set(key, value),
+  };
+  const first = logSecurityEvent({ type: 'Prueba', detail: 'Primera' }, storage);
+  const second = logSecurityEvent({ type: 'Prueba', detail: 'Segunda' }, storage);
+
+  assert.notEqual(first.id, second.id);
 });

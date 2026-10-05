@@ -1,6 +1,10 @@
 const KEY = 'edumotion:security-log';
 const EVENT = 'edumotion:security-log';
 const MAX_EVENTS = 50;
+let eventSequence = 0;
+
+const createEventId = () => globalThis.crypto?.randomUUID?.()
+  ?? `${Date.now()}-${eventSequence += 1}`;
 
 const getStorage = () => {
   try {
@@ -35,7 +39,7 @@ export function readSecurityLog(storage = getStorage()) {
 
 // Bitácora de eventos de seguridad. Nunca guarda datos personales ni la entrada original.
 export function logSecurityEvent({ type, detail, severity = 'media' }, storage = getStorage()) {
-  const event = { id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`, at: new Date().toISOString(), type, detail, severity };
+  const event = { id: createEventId(), at: new Date().toISOString(), type, detail, severity };
   const events = [event, ...readSecurityLog(storage)].slice(0, MAX_EVENTS);
   try {
     storage?.setItem(KEY, JSON.stringify(events));

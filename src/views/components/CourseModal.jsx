@@ -1,25 +1,45 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const formatCOP = (value) =>
   new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 }).format(value);
 
 const CourseModal = ({ course, onClose }) => {
+  const dialogRef = useRef(null);
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return undefined;
+    dialog.showModal();
+    return () => dialog.close();
+  }, []);
+
   if (!course) return null;
 
   return (
-    <div className="modal-overlay"
+    <dialog
+      ref={dialogRef}
+      className="modal-overlay"
+      aria-labelledby="course-modal-title"
       style={{
-        position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
-        background: 'rgba(0,0,0,0.7)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: 20
+        position: 'fixed', inset: 0, margin: 0, width: '100%', height: '100%',
+        maxWidth: 'none', maxHeight: 'none', border: 'none',
+        background: 'rgba(0,0,0,0.7)', display: 'flex', alignItems: 'center',
+        justifyContent: 'center', zIndex: 1000, padding: 20,
       }}
-      onClick={onClose}
+      onClick={(event) => {
+        if (event.target === event.currentTarget) onClose();
+      }}
+      onCancel={(event) => {
+        event.preventDefault();
+        onClose();
+      }}
     >
-      <div className="modal-content" style={{ background: '#fff', borderRadius: 12, padding: 20, maxWidth: 900, width: '100%', maxHeight: '90vh', overflow: 'auto', position: 'relative' }} onClick={e => e.stopPropagation()}>
-        <button onClick={onClose} style={{ position: 'absolute', right: 16, top: 16, background: 'none', border: 'none', fontSize: 24, cursor: 'pointer' }}>×</button>
+      <div className="modal-content" style={{ background: '#fff', borderRadius: 12, padding: 20, maxWidth: 900, width: '100%', maxHeight: '90vh', overflow: 'auto', position: 'relative' }}>
+        <button type="button" onClick={onClose} autoFocus style={{ position: 'absolute', right: 16, top: 16, background: 'none', border: 'none', fontSize: 24, cursor: 'pointer' }} aria-label="Cerrar detalles del curso">×</button>
 
         <img src={course.image} alt={course.title} style={{ width: '100%', height: 220, objectFit: 'cover', borderRadius: 8, marginBottom: 12 }} />
 
-        <h2 style={{ marginTop: 0 }}>{course.title}</h2>
+        <h2 id="course-modal-title" style={{ marginTop: 0 }}>{course.title}</h2>
         <p style={{ color: '#6b7280' }}>{course.longDescription || course.description}</p>
 
         <div style={{ display: 'flex', gap: 12, marginTop: 8, flexWrap: 'wrap' }}>
@@ -71,7 +91,7 @@ const CourseModal = ({ course, onClose }) => {
           </div>
         </div>
       </div>
-    </div>
+    </dialog>
   );
 };
 
