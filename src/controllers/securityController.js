@@ -28,7 +28,7 @@ export const SAMPLE_PAYLOADS = [
 
 export const SAMPLE_EMAILS = ['ana@correo.com', 'ana@@correo.com', 'a..b@correo.com', '<script>@x.com', 'sin-arroba.com'];
 export const SAMPLE_PASSWORDS = ['123456', 'Password1', 'Edumotion2026', 'T0rre-Azul#Lluvia9'];
-export const SAMPLE_URLS = ['https://www.uniminuto.edu.co', 'http://ejemplo.com', 'javascript:alert(1)', 'https://usuario:clave@ejemplo.com', 'http://192.168.1.1/admin', 'data:text/html,<script>alert(1)</script>'];
+export const SAMPLE_URLS = ['https://www.uniminuto.edu.co', 'https://ejemplo.com', 'javascript:alert(1)', 'https://usuario:clave@ejemplo.com', 'https://192.168.1.1/admin', 'data:text/html,<script>alert(1)</script>'];
 
 export const SAMPLE_FORMS = {
   valido: { name: 'Ana Pérez', email: 'ana@correo.com', subject: 'Información de cursos', message: 'Quiero saber más del curso de Data Science.' },

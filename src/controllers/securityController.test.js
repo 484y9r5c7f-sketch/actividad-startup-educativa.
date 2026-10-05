@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { evaluatePassword } from '../models/security/password.js';
 import { checkUrl } from '../models/security/urlGuard.js';
 import { securityLogToCsv, countBySeverity } from '../models/security/securityLog.js';
-import { analyzeEmail, analyzeForm, createRateLimitDemo, runSelfTest, SAMPLE_FORMS } from './securityController.js';
+import { analyzeEmail, analyzeForm, createRateLimitDemo, runSelfTest, SAMPLE_FORMS, SAMPLE_URLS } from './securityController.js';
 
 test('contraseñas: débil, media y fuerte', () => {
   assert.equal(evaluatePassword('').level, 'muy débil');
@@ -21,6 +21,7 @@ test('contraseñas: rechaza repeticiones y comunes', () => {
 test('URLs: segura, advertencia y bloqueada', () => {
   assert.equal(checkUrl('https://www.uniminuto.edu.co').level, 'segura');
   assert.equal(checkUrl('http://ejemplo.com').level, 'advertencia');
+  assert.ok(SAMPLE_URLS.every((url) => !url.startsWith('http://')));
   assert.equal(checkUrl('javascript:alert(1)').level, 'bloqueada');
   assert.equal(checkUrl('data:text/html,<script>alert(1)</script>').safe, false);
   assert.equal(checkUrl('https://user:pass@ejemplo.com').safe, false);
